@@ -154,6 +154,14 @@ namespace Indico
             return *this;
         }
 
+        inline friend Vector3 operator * (const float scalar, const Vector3& vec)
+		{
+			return Vector3(
+				scalar * vec.x,
+				scalar * vec.y,
+				scalar * vec.z);
+		}
+
         inline float length() const
         {
             return Math::sqrt(x * x + y * y + z * z);

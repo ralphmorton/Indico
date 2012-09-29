@@ -38,6 +38,7 @@ namespace Indico
 				EGL_BLUE_SIZE, 8,
 				EGL_GREEN_SIZE, 8,
 				EGL_RED_SIZE, 8,
+				EGL_DEPTH_SIZE, 16,
 				EGL_NONE
 			};
 			EGLint format;
@@ -62,7 +63,7 @@ namespace Indico
 			eglQuerySurface(mDisplay, mSurface, EGL_WIDTH, &mWidth);
 			eglQuerySurface(mDisplay, mSurface, EGL_HEIGHT, &mHeight);
 
-			mView = Matrix::createLookAt(Vector3::ONE*10, Vector3::ZERO, Vector3::UNIT_Y);
+			mView = Matrix::createLookAt(Vector3::ONE*25, Vector3::ZERO, Vector3::UNIT_Y);
 			mProj = Matrix::createPerspectiveFOV(Math::PI/3.0f, (float)mWidth/(float)mHeight, 1.0f, 1000.0f);
 
 			glEnable(GL_DEPTH_TEST);
